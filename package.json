@@ -15,8 +15,6 @@
   },
   "dependencies": {
     "three": "^0.135.0",
-    "web-ifc": "^0.0.35",
-    "web-ifc-three": "^0.0.118",
-    "web-ifc-viewer": "^1.0.207"
+    "web-ifc-viewer": "^1.0.218"
   }
 }
