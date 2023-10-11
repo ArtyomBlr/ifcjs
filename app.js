@@ -18,3 +18,18 @@ async function loadIfc(url) {
 }
 
 loadIfc('./assets/file.ifc');
+
+// Highlighting
+
+container.onmousemove = async () => await viewer.IFC.selector.prePickIfcItem();
+container.ondblclick = async (event) => {
+  const result = await viewer.IFC.selector.pickIfcItem(event.target, false);
+
+  if (!result) return;
+
+  const {modelID, id} = result;
+
+  const props = await viewer.IFC.getProperties(modelID, id, true, false);
+  
+  console.log(props);
+};
