@@ -15,6 +15,12 @@ async function loadIfc(url) {
 
   await viewer.shadowDropper.renderShadow(model.modelID);
   viewer.context.renderer.postProduction.active = true;
+
+  // get spacialTree
+
+  const spacialTree = await viewer.IFC.getSpatialStructure(model.modelID); 
+  
+  console.log(spacialTree);
 }
 
 loadIfc('./assets/file.ifc');
